@@ -1,0 +1,9 @@
+Flask==3.0.3
+flask_sqlalchemy==3.1.1
+sqlalchemy
+langchain==0.1.19
+langchain_community==0.0.38
+langchain_text_splitters==0.0.1
+langchain_openai==0.1.6
+unstructured
+unstructured[all-docs]
