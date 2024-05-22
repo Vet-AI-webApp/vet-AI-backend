@@ -3,7 +3,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.indexes import VectorstoreIndexCreator
 
 def getVectorIndex():    
-    books = ["A_python_book.pdf"]
+    books = ["docs/A_python_book.pdf"]
     chunks = []
 
     for book in books:
