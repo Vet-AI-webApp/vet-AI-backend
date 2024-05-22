@@ -1,5 +1,7 @@
 from flask import request, jsonify
 
+from datetime import datetime
+
 def init_routes(app, vectorIndex):
     @app.route("/")
     def hello():
@@ -25,4 +27,13 @@ def init_routes(app, vectorIndex):
         query = jsonData["query"]
         result = vectorIndex.query(query)
 
-        return jsonify(result), 201
+        # Create a new file with the current date as the filename
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        filename = f"{date_str}.txt"
+
+        # Write the query and result to the file
+        with open(filename, "a") as file:
+            file.write(f"Query: {query}\n")
+            file.write(f"Result: {result}\n\n")
+
+        return jsonify(result), 200
